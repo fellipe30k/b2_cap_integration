@@ -13,8 +13,8 @@ Os dados do cliente devem ser passados como parâmetros na URL. Apenas os valore
 {
   "cnpj": "47697574000124",
   "env": "production",
-  "simulacaoTipo": "carro", # carro, moto ou caminhao
-  "localCompra": "loja", # loja, pessoa_fisica, leilao ou nao_sei
+  "simulacaoTipo": "carro", // carro, moto ou caminhao
+  "localCompra": "loja", // loja, pessoa_fisica, leilao ou nao_sei
   "nomeCompleto": "FELLIPE JOSE DA SILVA",
   "nomeMaeCompleto": "LUCIA",
   "cpf": "705.444.55-01",
@@ -34,7 +34,7 @@ Os dados do cliente devem ser passados como parâmetros na URL. Apenas os valore
   "modeloCarro": "MODELO 1",
   "marcaCarro": "MARCA 1",
   "valorCarro": "2023",
-  "blindado": "nao", # sim ou nao
+  "blindado": "nao", // sim ou nao
   "termsCheckbox": "on"
 }
 ```
