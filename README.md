@@ -43,7 +43,6 @@ Os dados do cliente devem ser passados como parâmetros na URL. Apenas os valore
 A criptografia dos valores dos parâmetros é realizada utilizando a classe Encryptor abaixo. Use o método encode para criptografar os valores antes de passá-los na URL.
 
 ```php
-Copy code
 class Encryptor
 {
     const ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
