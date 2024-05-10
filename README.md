@@ -11,8 +11,6 @@ Os dados do cliente devem ser passados como parâmetros na URL. Apenas os valore
 
 ```json
 {
-  "cnpj": "47697574000124",
-  "env": "production",
   "simulacaoTipo": "carro", // carro, moto ou caminhao
   "localCompra": "loja", // loja, pessoa_fisica, leilao ou nao_sei
   "nomeCompleto": "FELLIPE JOSE DA SILVA",
