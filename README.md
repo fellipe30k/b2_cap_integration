@@ -10,33 +10,6 @@ GET https://www.b2cap.com.br?openModal=true
 Os dados do cliente devem ser passados como parâmetros na URL. Apenas os valores dos parâmetros devem ser criptografados (e não as chaves). Os parâmetros incluem:
 
 ```json
-cnpj
-env
-simulacaoTipo
-localCompra
-nomeCompleto
-nomeMaeCompleto
-cpf
-rg
-email
-endComercial
-endResidencial
-telefone
-dataNascimento
-cep
-leiloeiro
-dataLeilao
-numeroLote
-veiculo
-modeloLeilao
-anoCarro
-modeloCarro
-marcaCarro
-valorCarro
-blindado
-termsCheckbox
-```
-```json
 {
   "cnpj": "47697574000124",
   "env": "production",
