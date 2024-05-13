@@ -74,3 +74,76 @@ echo Encryptor::decode('OYuu07');  // Saída: texto decodificado
 ```
 # Nota
 Garanta que todos os valores dos parâmetros estejam corretamente criptografados para evitar a exposição de dados sensíveis.
+
+
+# Exemplo para gerar a URL com os dados:
+```php
+<?php
+
+class Encryptor {
+    const ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const ENCODING = "MOhqm0PnycUZeLdK8YvDCgNfb7FJtiHT52BrxoAkas9RWlXpEujSGI64VzQ31w";
+
+    public static function encode($text) {
+        $map = [];
+        // Criar o mapa de criptografia de ALPHABET para ENCODING
+        for ($i = 0; $i < strlen(self::ALPHABET); $i++) {
+            $map[self::ALPHABET[$i]] = self::ENCODING[$i];
+        }
+
+        $encodedText = '';
+        // Codificar cada caractere do texto
+        for ($i = 0; $i < strlen($text); $i++) {
+            $char = $text[$i];
+            if (array_key_exists($char, $map)) {
+                $encodedText .= $map[$char];
+            } else {
+                $encodedText .= rawurlencode($char); // Usar rawurlencode para caracteres especiais
+            }
+        }
+
+        return $encodedText;
+    }
+}
+
+// Dados para codificar e adicionar à URL
+$data = [
+    'simulacaoTipo' => "carro",
+    'localCompra' => "loja",
+    'nomeCompleto' => "FELLIPE JOSE DA SILVA",
+    'nomeMaeCompleto' => "LUCIA",
+    'cpf' => "705.444.55-01",
+    'rg' => "1231231",
+    'email' => "fellipejose2009@hotmail.com",
+    'endComercial' => "A",
+    'endResidencial' => "A",
+    'telefone' => "(32) 42432-4234",
+    'dataNascimento' => "23/03/1999",
+    'cep' => "23423-423",
+    'leiloeiro' => "",
+    'dataLeilao' => "",
+    'numeroLote' => "",
+    'veiculo' => "",
+    'modeloLeilao' => "",
+    'anoCarro' => "2023",
+    'modeloCarro' => "MODELO 1",
+    'marcaCarro' => "MARCA 1",
+    'valorCarro' => "2023",
+    'blindado' => "nao",
+    'termsCheckbox' => "on"
+];
+
+// Criar a URL com os valores codificados
+$baseURL = 'https://www.b2cap.com.br/?';
+$queryParams = [];
+foreach ($data as $key => $value) {
+    if ($value !== "") {  // Ignorar campos vazios
+        $queryParams[] = $key . '=' . Encryptor::encode($value);
+    }
+}
+$encodedURL = $baseURL . implode('&', $queryParams);
+
+echo $encodedURL;
+?>
+```
+
