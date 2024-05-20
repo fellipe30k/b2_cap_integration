@@ -11,7 +11,7 @@ Os dados do cliente devem ser passados como parâmetros na URL. Apenas os valore
 
 ```json
 {
-  "simulacaoTipo": "carro", // carro, moto ou caminhao
+  "simulacaoTipo": "carro", // carro, moto, caminhao ou onibus
   "localCompra": "loja", // loja, pessoa_fisica, leilao ou nao_sei
   "nomeCompleto": "FELLIPE JOSE DA SILVA",
   "nomeMaeCompleto": "LUCIA",
